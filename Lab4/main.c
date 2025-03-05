@@ -87,12 +87,41 @@ int main(void)
  while (1);
 
 } /* main */
-
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+// This function turns on LEDs LD5 through LD2 while ensuring that all segments 
+// in the seven-segment displays are turned off simultaneously.   
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part1(void)
 {
     leds_on(part1_leds_mask);
-}
+}//*run_lab4_part1*
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+// This function sequences the leds on the launchpad. The sequencing starts at LD0, 
+// turning it on for 0.2 seconds, then off before turning LD1 on for 0.2 seconds. Continue 
+// this sequence until LD7, then reverse the sequence to return to LD0. This sequence, 
+// from LD0 to LD7 and back to LD0, should repeat five (5) times before turning off all LEDs.   
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part2(void)
 {
     leds_off();
@@ -107,18 +136,37 @@ void run_lab4_part2(void)
             led_on(led_index);
             msec_delay(25);
             led_off(led_index);
-        }
+        }//*for*
         for(led_index = 6; led_index>=0; led_index--)
         {
             led_on(led_index);
             msec_delay(25);
             led_off(led_index);
-        }
-    msec_delay(100);
-    repeat_counter++;
-    }    
-}
+        }//*for*
+        
+        msec_delay(100);
+        repeat_counter++;
+    }//*while*    
+}//*run_lab4_part2
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+// This function aims to sequence through LEDs in a binary counting pattern. The 
+// sequencing in binary is 0000_0000, 0000_0001, 0000_0010, 0000_0011, 0000_0100 
+// until it gets to 1111_1111. The sequence automatically rolls over to binary 0000_0000. 
+// Each binary value is displayed for 0.10 seconds.This binary counting pattern 
+// should run twice (2x) and be controlled using a while loop and a loop counter. After the loop 
+// terminates, ensure all the LEDs are off.   
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part3(void)
 {
     leds_off();
@@ -132,19 +180,50 @@ void run_lab4_part3(void)
             leds_on(leds_on_index);
             msec_delay(10);
             leds_off();
-        }
+        }//*for*
+        
         repeat_counter++;
-    }
+    }//*while*
 
-}
+}//*run_lab4_part3*
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+//  The letter L is displayed on DIG0. At the same time,
+//  the LEDs are all off.   
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part4(void)
 {
     led_disable();
     seg7_on(seg7_letter_L, SEG7_DIG0_ENABLE_IDX);
 
-}
+}//*run_lab4_part4*
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+//  This function displays the number ‘4’ on DIG2. The number is displayed 
+// for 3 seconds and then off for 2 seconds.This number, ‘4,’ is flashed on DIG2 four 
+// (4) times and controlled using a while loop and a loop counter. After the loop 
+// terminates, all the LEDs and seven-segment displays are off.   
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part5(void)
 {
     uint8_t counter;
@@ -157,9 +236,23 @@ void run_lab4_part5(void)
         msec_delay(2000);
 
         counter++;
-    }
-}
+    }//*while*
+}//*run_lab4_part5*
 
+//-----------------------------------------------------------------------------
+// DESCRIPTION:
+//  This function displays the word CAFE on seven-segment DIG0 down to DIG3 (left to right). 
+//  At the same time, the LEDs are all off.
+//
+// INPUT PARAMETERS:
+//    none
+//
+// OUTPUT PARAMETERS:
+//    none
+//
+// RETURN:
+//    none
+// -----------------------------------------------------------------------------
 void run_lab4_part6(void)
 {
     uint8_t counter = 0;
@@ -176,5 +269,5 @@ void run_lab4_part6(void)
         msec_delay(10);
 
         counter++;
-    }
-}
+    }//*while*
+}//*run_lab4_part6*
