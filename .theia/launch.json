@@ -18,6 +18,48 @@
             "type": "ccs-debug",
             "request": "launch",
             "project": "Lab5"
+        },
+        {
+            "name": "Lab6",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab6"
+        },
+        {
+            "name": "Lab7_Part1_2",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab7_Part1_2"
+        },
+        {
+            "name": "Lab7_Part12_Copy",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab7_Part12_Copy"
+        },
+        {
+            "name": "Lab7_Part4",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab7_Part4"
+        },
+        {
+            "name": "Lab8_part1",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab8_part1"
+        },
+        {
+            "name": "Lab8 _part2",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab8 _part2"
+        },
+        {
+            "name": "Lab8 _part3",
+            "type": "ccs-debug",
+            "request": "launch",
+            "project": "Lab8 _part3"
         }
     ]
 }
